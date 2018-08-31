@@ -54,19 +54,9 @@ export class PPMessage
 
   public static show()
   {
-    this.update({
-      ent_user_id: "234234",
-      ent_user_name: "Zeno",
-      ent_user_icon: "",
-      ent_user_mobile: "18888888888"
-    });
-
     this.ready().then(() => {
       if (!this.PP.isOpen()) {
-        // let inter = setInterval(() => {
         this.PP.show();
-        //   if (this.PP.isOpen()) clearInterval(inter)
-        // }, 1000)
       }
     })
   }

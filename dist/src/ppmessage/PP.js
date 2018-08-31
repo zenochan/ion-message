@@ -35,19 +35,9 @@ var PPMessage = /** @class */ (function () {
     };
     PPMessage.show = function () {
         var _this = this;
-        this.update({
-            ent_user_id: "234234",
-            ent_user_name: "Zeno",
-            ent_user_icon: "",
-            ent_user_mobile: "18888888888"
-        });
         this.ready().then(function () {
             if (!_this.PP.isOpen()) {
-                // let inter = setInterval(() => {
-                // let inter = setInterval(() => {
                 _this.PP.show();
-                //   if (this.PP.isOpen()) clearInterval(inter)
-                // }, 1000)
             }
         });
     };
