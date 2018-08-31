@@ -1,27 +1,30 @@
 import {Inject, InjectionToken, ModuleWithProviders, NgModule} from "@angular/core";
-import {PpMessageComponent} from "./pp-message";
-import {CommonModule} from "@angular/common";
+import {PPMessage} from "./PP";
 
-export const PP_URL = new InjectionToken("qiyu_key");
+export const PP_ID = new InjectionToken("qiyu_key");
 export let ppurl: string;
 
-@NgModule({
-  declarations: [PpMessageComponent],
-  imports: [CommonModule],
-  exports: [PpMessageComponent]
-})
+@NgModule()
 export class PpMessageModule
 {
-  constructor(@Inject(PP_URL) url: string)
+  constructor(@Inject(PP_ID) ppid: string)
   {
-    ppurl = url;
+    window['ppSettings'] = {
+      app_uuid: ppid,
+      view: {launcher_is_show: false}
+    };
+
+    let script = document.createElement("script");
+    script.src = `https://ppmessage.cn/ppcom/assets/pp-library.min.js`;
+    document.head.appendChild(script);
+    PPMessage.ready().then(() => console.log("PP Message initialized"));
   }
 
-  public static forRoot(url: string = null): ModuleWithProviders
+  public static forRoot(appid: string): ModuleWithProviders
   {
     return {
       ngModule: PpMessageModule,
-      providers: [{provide: PP_URL, useValue: url}]
+      providers: [{provide: PP_ID, useValue: appid}]
     }
   }
 }

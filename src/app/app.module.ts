@@ -7,7 +7,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {QiyuModule} from "../qiyu/qiyu.module";
-import {PpMessagePageModule} from "../pages/pp-message/pp-message.module";
+import {PpMessageModule} from "../ppmessage/pp-message.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {PpMessagePageModule} from "../pages/pp-message/pp-message.module";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     QiyuModule.forRoot("46b996525d9ed35a725516a8a3bea1ac"),
-    PpMessagePageModule
+    PpMessageModule.forRoot("41d61548-ac30-11e8-8847-00163e0c79f6")
   ],
   bootstrap: [IonicApp],
   entryComponents: [

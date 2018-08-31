@@ -5,4 +5,5 @@ export declare class HomePage {
     private sanitizer;
     url: any;
     constructor(navCtrl: NavController, sanitizer: DomSanitizer);
+    showPPMessage(): void;
 }

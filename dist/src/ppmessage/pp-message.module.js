@@ -1,29 +1,30 @@
 import { Inject, InjectionToken, NgModule } from "@angular/core";
-import { PpMessageComponent } from "./pp-message";
-import { CommonModule } from "@angular/common";
-export var PP_URL = new InjectionToken("qiyu_key");
+import { PPMessage } from "./PP";
+export var PP_ID = new InjectionToken("qiyu_key");
 export var ppurl;
 var PpMessageModule = /** @class */ (function () {
-    function PpMessageModule(url) {
-        ppurl = url;
+    function PpMessageModule(ppid) {
+        window['ppSettings'] = {
+            app_uuid: ppid,
+            view: { launcher_is_show: false }
+        };
+        var script = document.createElement("script");
+        script.src = "https://ppmessage.cn/ppcom/assets/pp-library.min.js";
+        document.head.appendChild(script);
+        PPMessage.ready().then(function () { return console.log("PP Message initialized"); });
     }
-    PpMessageModule.forRoot = function (url) {
-        if (url === void 0) { url = null; }
+    PpMessageModule.forRoot = function (appid) {
         return {
             ngModule: PpMessageModule,
-            providers: [{ provide: PP_URL, useValue: url }]
+            providers: [{ provide: PP_ID, useValue: appid }]
         };
     };
     PpMessageModule.decorators = [
-        { type: NgModule, args: [{
-                    declarations: [PpMessageComponent],
-                    imports: [CommonModule],
-                    exports: [PpMessageComponent]
-                },] },
+        { type: NgModule },
     ];
     /** @nocollapse */
     PpMessageModule.ctorParameters = function () { return [
-        { type: undefined, decorators: [{ type: Inject, args: [PP_URL,] },] },
+        { type: undefined, decorators: [{ type: Inject, args: [PP_ID,] },] },
     ]; };
     return PpMessageModule;
 }());

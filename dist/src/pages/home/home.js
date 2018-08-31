@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Qiyu } from "../../qiyu/qiyu";
 import { DomSanitizer } from "@angular/platform-browser";
+import { PPMessage } from "../../ppmessage/PP";
 var HomePage = /** @class */ (function () {
     function HomePage(navCtrl, sanitizer) {
-        var _this = this;
+        // Qiyu.ready().then(() => {
+        //   this.url = this.sanitizer.bypassSecurityTrustResourceUrl(Qiyu.url());
+        // });
         this.navCtrl = navCtrl;
         this.sanitizer = sanitizer;
-        Qiyu.ready().then(function () {
-            _this.url = _this.sanitizer.bypassSecurityTrustResourceUrl(Qiyu.url());
-        });
-        // this.navCtrl.push(PpMessagePage)
     }
+    HomePage.prototype.showPPMessage = function () {
+        PPMessage.show();
+    };
     HomePage.decorators = [
         { type: Component, args: [{
                     selector: 'page-home',

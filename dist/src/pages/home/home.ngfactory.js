@@ -14,13 +14,18 @@ import * as i6 from "ionic-angular/components/app/app";
 import * as i7 from "ionic-angular/platform/keyboard";
 import * as i8 from "ionic-angular/navigation/view-controller";
 import * as i9 from "ionic-angular/navigation/nav-controller";
-import * as i10 from "./home";
-import * as i11 from "@angular/platform-browser";
+import * as i10 from "../../../node_modules/ionic-angular/components/button/button.ngfactory";
+import * as i11 from "ionic-angular/components/button/button";
+import * as i12 from "./home";
+import * as i13 from "@angular/platform-browser";
 var styles_HomePage = [];
 var RenderType_HomePage = i0.ɵcrt({ encapsulation: 2, styles: styles_HomePage, data: {} });
 export { RenderType_HomePage as RenderType_HomePage };
-export function View_HomePage_0(_l) { return i0.ɵvid(0, [(_l()(), i0.ɵeld(0, 0, null, null, 4, "ion-content", [["padding", ""]], [[2, "statusbar-padding", null], [2, "has-refresher", null]], null, null, i1.View_Content_0, i1.RenderType_Content)), i0.ɵdid(1, 4374528, null, 0, i2.Content, [i3.Config, i4.Platform, i5.DomController, i0.ElementRef, i0.Renderer, i6.App, i7.Keyboard, i0.NgZone, [2, i8.ViewController], [2, i9.NavController]], null, null), (_l()(), i0.ɵted(-1, 1, ["\n  "])), (_l()(), i0.ɵeld(3, 0, null, 1, 0, "iframe", [["height", "100%"], ["width", "100%"]], [[8, "src", 5]], null, null, null, null)), (_l()(), i0.ɵted(-1, 1, ["\n"])), (_l()(), i0.ɵted(-1, null, ["\n"]))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = i0.ɵnov(_v, 1).statusbarPadding; var currVal_1 = i0.ɵnov(_v, 1)._hasRefresher; _ck(_v, 0, 0, currVal_0, currVal_1); var currVal_2 = _co.url; _ck(_v, 3, 0, currVal_2); }); }
-export function View_HomePage_Host_0(_l) { return i0.ɵvid(0, [(_l()(), i0.ɵeld(0, 0, null, null, 1, "page-home", [], null, null, null, View_HomePage_0, RenderType_HomePage)), i0.ɵdid(1, 49152, null, 0, i10.HomePage, [i9.NavController, i11.DomSanitizer], null, null)], null, null); }
-var HomePageNgFactory = i0.ɵccf("page-home", i10.HomePage, View_HomePage_Host_0, {}, {}, []);
+export function View_HomePage_0(_l) { return i0.ɵvid(0, [(_l()(), i0.ɵeld(0, 0, null, null, 7, "ion-content", [], [[2, "statusbar-padding", null], [2, "has-refresher", null]], null, null, i1.View_Content_0, i1.RenderType_Content)), i0.ɵdid(1, 4374528, null, 0, i2.Content, [i3.Config, i4.Platform, i5.DomController, i0.ElementRef, i0.Renderer, i6.App, i7.Keyboard, i0.NgZone, [2, i8.ViewController], [2, i9.NavController]], null, null), (_l()(), i0.ɵted(-1, 1, ["\n  "])), (_l()(), i0.ɵted(-1, 1, ["\n  "])), (_l()(), i0.ɵeld(4, 0, null, 1, 2, "button", [["full", ""], ["ion-button", ""]], null, [[null, "click"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
+        var pd_0 = (_co.showPPMessage() !== false);
+        ad = (pd_0 && ad);
+    } return ad; }, i10.View_Button_0, i10.RenderType_Button)), i0.ɵdid(5, 1097728, null, 0, i11.Button, [[8, ""], i3.Config, i0.ElementRef, i0.Renderer], { full: [0, "full"] }, null), (_l()(), i0.ɵted(-1, 0, ["PP Message"])), (_l()(), i0.ɵted(-1, 1, ["\n"])), (_l()(), i0.ɵted(-1, null, ["\n"]))], function (_ck, _v) { var currVal_2 = ""; _ck(_v, 5, 0, currVal_2); }, function (_ck, _v) { var currVal_0 = i0.ɵnov(_v, 1).statusbarPadding; var currVal_1 = i0.ɵnov(_v, 1)._hasRefresher; _ck(_v, 0, 0, currVal_0, currVal_1); }); }
+export function View_HomePage_Host_0(_l) { return i0.ɵvid(0, [(_l()(), i0.ɵeld(0, 0, null, null, 1, "page-home", [], null, null, null, View_HomePage_0, RenderType_HomePage)), i0.ɵdid(1, 49152, null, 0, i12.HomePage, [i9.NavController, i13.DomSanitizer], null, null)], null, null); }
+var HomePageNgFactory = i0.ɵccf("page-home", i12.HomePage, View_HomePage_Host_0, {}, {}, []);
 export { HomePageNgFactory as HomePageNgFactory };
 //# sourceMappingURL=home.ngfactory.js.map
