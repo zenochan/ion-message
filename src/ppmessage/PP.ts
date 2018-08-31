@@ -43,6 +43,7 @@ export class PPMessage
   {
     this.ready().then(() => {
       Object.keys(conf).forEach(key => window['ppSettings'][key] = conf[key])
+      this.PP.update()
     })
   }
 

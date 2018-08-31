@@ -24,8 +24,10 @@ var PPMessage = /** @class */ (function () {
         });
     };
     PPMessage.update = function (conf) {
+        var _this = this;
         this.ready().then(function () {
             Object.keys(conf).forEach(function (key) { return window['ppSettings'][key] = conf[key]; });
+            _this.PP.update();
         });
     };
     PPMessage.onShow = function () {
