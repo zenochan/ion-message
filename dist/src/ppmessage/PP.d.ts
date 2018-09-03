@@ -21,4 +21,8 @@ export declare class PPMessage {
     }): void;
     static onShow(): Promise<void>;
     static show(): void;
+    /**
+     * 解决输入法遮挡输入框
+     */
+    static resizePP(): void;
 }

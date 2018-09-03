@@ -1,3 +1,5 @@
+import {text} from "@angular/core/src/render3/instructions";
+
 export class PPMessage
 {
 
@@ -58,7 +60,32 @@ export class PPMessage
     this.ready().then(() => {
       if (!this.PP.isOpen()) {
         this.PP.show();
+        this.resizePP();
       }
     })
+  }
+
+  /**
+   * 解决输入法遮挡输入框
+   */
+  public static resizePP()
+  {
+    setTimeout(() => {
+      let pp = document.getElementById("pp-conversation");
+      let textarea = document.getElementById("pp-composer-container-textarea");
+      let content = document.getElementById("pp-conversation-content");
+      if (!!pp) return;
+      textarea.addEventListener("focus", () => {
+        // pp.scrollIntoView(false)
+        setTimeout(() => {
+          content.dataset.height = content.style.height;
+          content.style.height = parseInt(content.style.height.replace("px", "")) - 100 + "px";
+        }, 100)
+      });
+      textarea.addEventListener("blur", () => {
+        // setTimeout(() => { pp.style.height = window.innerHeight + "px"; }, 100);
+        content.style.height = content.dataset.height
+      })
+    }, 3000);
   }
 }
